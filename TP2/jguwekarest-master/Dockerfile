@@ -51,4 +51,5 @@ RUN apt-get install -y expect
 # Start profiling agent
 USER 501
 COPY ./start_profiling.exp /home/tomcat
-
+RUN mkdir /home/tomcat/jprofiler
+RUN cp -a ~/jprofiler/. /home/tomcat/jprofiler/

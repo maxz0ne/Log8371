@@ -14,6 +14,7 @@ $ docker inspect weka | grep -P "IPAddress" | grep -P "\d+"
 ## Démarage du profilage du conteneur JGU Weka
 ```
 $ docker exec -it weka bash
+$ chmod +x /home/tomcat/start_profiling.exp
 $ /home/tomcat/start_profiling.exp
 ```
 
