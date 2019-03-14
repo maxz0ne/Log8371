@@ -7,11 +7,10 @@ Voici un résumé des commandes à exécuter pour démarrer un conteneur Docker 
 - Installation de Maven
 - Installation de Docker-Compose
 
-## Installation et démarrage d'un conteneur Mongo
+## Installation des images
 ```
 $ docker pull mongo
 $ docker build -t weka .
-$ docker run --name mongodb -d mongo
 ```
 
 ## Installation et démarrage de Weka Rest
