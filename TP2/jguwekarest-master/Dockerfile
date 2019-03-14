@@ -1,6 +1,7 @@
 FROM tomcat:8.0-jre8
 MAINTAINER "M Rautenberg <rautenberg@uni-mainz.de>"
 
+# Tomcat
 # remove preinstalled webapps 
 RUN rm -fr /usr/local/tomcat/webapps/ROOT
 RUN rm -fr /usr/local/tomcat/webapps/host-manager
@@ -24,3 +25,30 @@ RUN chown -R tomcat:root /usr/local/tomcat
 USER 501
 
 EXPOSE 8080
+
+# Jprofiler
+# Download jprofiler
+RUN wget http://download-keycdn.ej-technologies.com/jprofiler/jprofiler_linux_10_1_5.tar.gz -P /tmp/
+
+RUN mkdir ~/jprofiler
+
+# Unzip the sources
+RUN tar -xzf /tmp/jprofiler_linux_10_1_5.tar.gz -C ~/jprofiler
+# Delete the tar archive
+RUN rm /tmp/jprofiler_linux_10_1_5.tar.gz
+
+ENV JPAGENT_PATH="-agentpath:/usr/local/jprofiler10/bin/linux-x64/libjprofilerti.so=nowait"
+# Expose port so we can connect to it as a remote host from the JProfiler GUI
+EXPOSE 8849
+
+
+
+# Install expect to automatically answer script questions
+USER root
+RUN apt-get update
+RUN apt-get install -y expect
+
+# Start profiling agent
+USER 501
+COPY ./start_profiling.exp /home/tomcat
+

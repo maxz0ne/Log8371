@@ -5,13 +5,14 @@ services:
     container_name: jguwekamongo
     restart: always
   jguweka:
-    image: jguweka/jguweka:OAS3
-    container_name: jguwekarest
+    image: weka
+    container_name: weka
     restart: always
     links:
       - "mongo:mongodb"
     ports:
-      - "8081:8080"
+      - "8080:8080"
+      - "8849:8849"
     depends_on:
       - mongo
     labels:

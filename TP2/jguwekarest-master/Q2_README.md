@@ -5,18 +5,20 @@ Voici un résumé des commandes à exécuter pour démarrer un conteneur Docker 
 ## Prérequis
 - Installation de Docker
 - Installation de Maven
+- Installation de Docker-Compose
 
 ## Installation et démarrage d'un conteneur Mongo
 ```
 $ docker pull mongo
+$ docker build -t weka .
 $ docker run --name mongodb -d mongo
 ```
 
 ## Installation et démarrage de Weka Rest
 ```
 $ mvn clean package
-$ docker build -t dockerhubuser/jguweka:0AS3 .
-$ docker run -p 8080:8080 --link mongodb:mongodb dockerhubuser/jguweka:0AS3
+$ docker-compose up
+
 ```
 
 On peut maintenant accéder à l'interface Swagger de Weka Rest via cette [adresse](http://localhost:8080)
