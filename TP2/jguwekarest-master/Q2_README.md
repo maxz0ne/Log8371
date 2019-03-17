@@ -9,15 +9,14 @@ Voici un résumé des commandes à exécuter pour démarrer un conteneur Docker 
 
 ## Installation des images
 ```
+$ mvn clean package
 $ docker pull mongo
 $ docker build -t weka .
 ```
 
 ## Installation et démarrage de Weka Rest
 ```
-$ mvn clean package
 $ docker-compose up
-
 ```
 
 On peut maintenant accéder à l'interface Swagger de Weka Rest via cette [adresse](http://localhost:8080)
