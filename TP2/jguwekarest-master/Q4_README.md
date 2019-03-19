@@ -20,3 +20,5 @@ Voici un résumé des commandes à exécuter pour exécuter les tests de charge 
 - Toujours sous "Test Users", il est possible de voir le résultats des tests dans "View Results Tree"
 - Pour lancer les tests, Run->Start
 
+- Pour connaître les paramètres d'entrées de chaque cas de test, veillez vous référer au rapport soumis dans ce travail.
+
