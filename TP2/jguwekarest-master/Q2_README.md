@@ -19,4 +19,4 @@ $ docker build -t weka .
 $ docker-compose up
 ```
 
-On peut maintenant accéder à l'interface Swagger de Weka Rest via cette [adresse](http://localhost:8080)
+On peut maintenant accéder à l'interface Swagger de Weka Rest via cette [http://localhost:80](http://localhost:80)
